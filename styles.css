@@ -1,10 +1,73 @@
+/* font import */ 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 * {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-  }
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Silkscreen'; 
   
-  .calcWrapper {
-    display: grid; 
-    
+}
+body {
+  background: linear-gradient(to right, #FBAB7E, #F7CE68, #cc7818);
   }
+button {
+  font-size: 50px; 
+  padding: 20px; 
+  background: coral; 
+  border: 2px solid ;
+  color: black; 
+}
+button:hover {
+  background-color: rgb(235, 173, 173); 
+}
+.operator, 
+.clear {
+  background: rgb(73, 71, 71); 
+  border: 2px solid coral; 
+  color: white; 
+}
+.operator:hover {
+  background-color: white; 
+  color: black; 
+}
+.clear:hover {
+  background-color: red; 
+}
+
+.headerContainer {
+  display: grid; 
+  grid-template-columns: auto; 
+  justify-content: center;
+  padding: 35px; 
+  font-size: 30px; 
+  font-weight: 900; 
+  background: coral; 
+  box-shadow: 1px 1px 30px 1px black; 
+}
+
+.calcContainer {
+  display: grid; 
+  justify-content: center;
+  padding-top: 30px; 
+}
+.screen {
+  width: 400px; 
+  background-color: rgb(238, 152, 121);
+  height: 200px; 
+}
+
+.buttonsContainer {
+  display: grid; 
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
+  height: 400px; 
+  width: 400px;  
+}
+.input {
+  background: rgb(122, 82, 68); 
+  grid-column: 1/4
+}
+.clear {
+  grid-column: 4/5;
+}
