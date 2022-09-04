@@ -69,7 +69,7 @@ button:active {
   background: coral; 
   justify-content: center;
   align-items: center;
-  font-size: 30px; 
+  font-size: 50px; 
   color: white; 
 }
 
@@ -80,6 +80,17 @@ button:active {
   height: 400px; 
   width: 400px;  
 }
+.inputDiv {
+  display: flex; 
+  background: rgb(122, 82, 68); 
+  grid-column: 1/4; 
+  /* text-align: end */
+  justify-content: end;
+  align-items: flex-end;
+  font-size: 50px; 
+  /* color: rgb(248, 227, 227); */
+  color: white; 
+}
 .input {
   display: flex; 
   background: rgb(122, 82, 68); 
@@ -87,7 +98,7 @@ button:active {
   /* text-align: end */
   justify-content: end;
   align-items: flex-end;
-  font-size: 30px; 
+  font-size: 50px !important; 
   /* color: rgb(248, 227, 227); */
   color: white; 
 }

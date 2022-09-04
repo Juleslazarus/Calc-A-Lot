@@ -1,61 +1,69 @@
-const numberBtn = document.querySelectorAll('.number'); 
+let operatorValue = ''; 
 
-const input = document.querySelector('.input'); 
+let screenValue = ''; 
 
-const screen = document.querySelector('.screen'); 
+let inputValue = ''; 
 
-const decimalBtn = document.querySelector('.decimal'); 
+let testDiv = document.querySelector('.test'); 
 
-const operatorBtn = document.querySelectorAll('.operator'); 
+let clear = document.querySelector('.clear'); 
 
-const clearBtn = document.querySelector('.clear'); 
+let inputDiv = document.querySelector('.inputDiv'); 
+
+let screen = document.querySelector('.screen'); 
+
+let numbers = document.querySelectorAll('.number'); 
+
+let operators = document.querySelectorAll('.operator'); 
+
+let decimal = document.querySelector('.decimal'); 
+
+let equals = document.querySelector('.equals'); 
 
 
-// this is for clearing the screen
-function clearInput() {
-    input.innerText = ''; 
+
+numbers.forEach((number) => {
+    number.addEventListener('click', () => {
+        inputValue = number.innerText; 
+
+        inputDiv.innerText += inputValue; 
+    })
+})
+
+operators.forEach((op) => {
+    op.addEventListener('click', () => {
+        operatorValue = op.innerText; 
+
+        screen.innerText = inputDiv.innerText + operatorValue; 
+
+        inputDiv.innerText = ''; 
+    })
+})
+
+equals.addEventListener('click', () => {
+    inputValue = parseInt(inputDiv.innerText); 
+    screenValue = parseInt(screen.innerText); 
+    if(operatorValue === '/') {
+        screen.innerText = screenValue / inputValue; 
+        inputDiv.innerText = ''; 
+    }
+    if(operatorValue === '+') {
+        screen.innerText = screenValue + inputValue; 
+        inputDiv.innerText = '';
+    }
+    if(operatorValue === '-') {
+        screen.innerText = screenValue - inputValue; 
+        inputDiv.innerText = '';
+    }
+    if(operatorValue === '*') {
+        screen.innerText = screenValue * inputValue; 
+        inputDiv.innerText = '';
+    }
+})
+
+
+clear.addEventListener('click', () => {
+    inputDiv.innerText = ''; 
     screen.innerText = ''; 
-}
-
-let inputValue; 
-//this functions adds the buttons with class of '.number' to the 
-//div class '.input's innerText. 
-numberBtn.forEach(button => {
-    button.addEventListener('click', (userInput) => {
-        let inputValue = userInput.target.innerText; 
-       
-        input.innerText += inputValue; 
-
-        
-    })
 })
-
-
-//this function
-operatorBtn.forEach(operation => {
-    operation.addEventListener('click', (e) => {
-        let operatorValue = e.target.innerText; 
-
-        let num1 = input.innerText; 
-
-        if (operatorValue === '/') {
-            screen.innerText = num1 +operatorValue; 
-            input.innerText = '';
-            if(screen.innerText.includes('/') )
-        }
-        if (operatorValue === '+') {
-            screen.innerText = num1 +operatorValue; 
-            input.innerText = ''; 
-        }
-        if (operatorValue === '-') {
-            screen.innerText = num1 +operatorValue; 
-            input.innerText = ''; 
-        }
-        if (operatorValue === '*') {
-            screen.innerText = num1 +operatorValue; 
-            input.innerText = ''; 
-        }
-    })
-})
-clearBtn.addEventListener('click', clearInput); 
 
