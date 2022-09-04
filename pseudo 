@@ -1,0 +1,26 @@
+make an event listener that sends the var value which is the eventlistiner 
+innerText of the button to the screen for all the operators 
+
+make an event listener that works like this: 
+
+operator.addEventListener('click', () => {
+    <!-- when either one of the operators ('/', '+', '-', '*') is clicked 
+    it can send the inputValue into the screenValue like so:  -->
+    screenValue = `${inputValue}` + operator.innerText; 
+
+    which whould take the input value and add it to the screen 
+    innerText value with the operator comming after it. 
+
+    then we can make the equals button work like so 
+
+    if (operator === '=') {
+        if (screenValue.innerText.includes('/')){
+            let screenValue.innerText = screenValue.innerText / inputValue.innerText; 
+            or we can have a resultScreen just in case theres issues with 
+            this like so: 
+
+            resultScreen.innerText = screenValue.innerText / inputValue.innerText; 
+        }
+    }
+    
+})
